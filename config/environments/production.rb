@@ -82,8 +82,9 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'rasmin-pinteresting.herokuapp.com' }
 
   # sets paperclip to upload images to amazon s3
-  config.paperclip_defaults = {
+config.paperclip_defaults = {
   :storage => :s3,
+  :s3_region => 'us-west-2',
   :s3_credentials => {
     :bucket => ENV['S3_BUCKET_NAME'],
     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
